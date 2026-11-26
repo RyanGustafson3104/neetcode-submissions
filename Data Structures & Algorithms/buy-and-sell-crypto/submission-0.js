@@ -1,0 +1,16 @@
+class Solution {
+    /**
+     * @param {number[]} prices
+     * @return {number}
+     */
+    maxProfit(prices) {
+        let out = 0;
+
+        for(let i = 0; i < prices.length; i++){
+            for(let j = i + 1; j < prices.length; j++){
+                out = Math.max(out, prices[j] - prices[i]);
+            }
+        }
+        return out;
+    }
+}
